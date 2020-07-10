@@ -1,0 +1,56 @@
+﻿<Window x:Class="ToolsWorld.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolsWorld.WPF"
+        xmlns:model="clr-namespace:ToolsWorld.BL.Model;assembly=ToolsWorld.BL"
+        mc:Ignorable="d"
+        Title="Мир инструментов — главная"
+        Height="Auto"
+        Width="Auto"
+        SizeToContent="Height"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid Background="PaleGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="500"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Height="Auto" VerticalAlignment="Top" FontSize="16">
+            <MenuItem Header="Файл">
+                <MenuItem Name="InitializeDataMenuItemAsync" Header="Инициализировать случайные записи" Click="InitializeDataMenuItem_ClickAsync"/>
+                <MenuItem Name="ExitAccountMenuItem" Header="Выход" Click="ExitAccountMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Учетная запись">
+                <MenuItem Name="ChangePasswordDataMenuItem" Header="Изменить пароль" Click="ChangePasswordMenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <Image Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Source="/Resources/tools.png"/>
+
+        <Button Grid.Row="2" Grid.Column="0" Name="SalesButton" Content="Продажи" Style="{StaticResource CommonControlStyle}" FontSize="50" Background="PaleGoldenrod" Click="SalesButton_Click"/>
+        <Button Grid.Row="2" Grid.Column="1" Name="ProductsButton" Content="Товары" Style="{StaticResource CommonControlStyle}" FontSize="50" Background="PaleGoldenrod" Click="ProductsButton_Click"/>
+        <Button Grid.Row="3" Grid.Column="0" Name="OrdersButton" Content="Заказы" Style="{StaticResource CommonControlStyle}" FontSize="50" Background="PaleGoldenrod" Click="OrdersButton_Click"/>
+        <Button Grid.Row="3" Grid.Column="1" Name="SuppliersButton" Content="Поставщики" Style="{StaticResource CommonControlStyle}" FontSize="50" Background="PaleGoldenrod" Click="SuppliersButton_Click"/>
+        <Button Grid.Row="4" Grid.Column="0" Name="WorkersButton" Content="Сотрудники" Style="{StaticResource CommonControlStyle}" FontSize="50" Background="PaleGoldenrod" Click="WorkersButton_Click"/>
+        <Button Grid.Row="4" Grid.Column="1" Name="DepartamentsButton" Content="Отделы" Style="{StaticResource CommonControlStyle}" FontSize="50" Background="PaleGoldenrod" Click="DepartamentsButton_Click"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Name="FullnameTextBlock" Style="{StaticResource CommonControlStyle}" FontSize="14"/>
+        <StackPanel Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+            <TextBlock Grid.Row="5" Grid.Column="1" Name="LogTextBlock" Style="{StaticResource CommonControlStyle}" FontSize="12" Visibility="Hidden"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Уровень доступа:" Style="{StaticResource CommonControlStyle}" FontSize="12"/>
+                <TextBlock Name="LvlTextBlock" Style="{StaticResource CommonControlStyle}" FontSize="12"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

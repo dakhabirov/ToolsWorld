@@ -1,0 +1,93 @@
+﻿<Window x:Class="ToolsWorld.WPF.SalesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolsWorld.WPF"
+        mc:Ignorable="d"
+        Title="Мир инструментов — продажи"
+        Height="Auto"
+        Width="Auto"
+        WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid>
+        <Grid Background="PaleGreen">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="0.33*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Height="Auto" VerticalAlignment="Top" FontSize="16">
+                <MenuItem Header="Файл">
+                    <MenuItem Name="ExitMenuItem" Header="Выход" Click="ExitMenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="Действия">
+                    <MenuItem Name="GetDayResultMenuItem" Header="Подведение финансовых итогов дня" Click="GetDayResultMenuItem_Click"/>
+                    <MenuItem Name="GetLastMonthResultMenuItem" Header="Анализ результативности работы продавцов (для премирования)" Click="GetLastMonthResultMenuItem_Click"/>
+                    <MenuItem Header="Анализ объемов продаж">
+                        <MenuItem Name="GetVolumeSalesOnWeekDays" Header="По дням недели" Click="GetVolumeSalesOnWeekDays_Click"/>
+                        <MenuItem Name="GetVolumeSalesOnMonths" Header="По месяцам" Click="GetVolumeSalesOnMonths_Click"/>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+
+            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <ComboBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="ParamComboBox" Style="{StaticResource CommonControlStyle}" FontSize="14" ItemsSource="{Binding Sale}">
+                    <ComboBoxItem Content=""/>
+                    <ComboBoxItem Content="Дата продажи"/>
+                    <ComboBoxItem Content="Реализовал"/>
+                    <ComboBoxItem Content="Отдел"/>
+                </ComboBox>
+
+                <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="ValueTextBox" Style="{StaticResource CommonControlStyle}" FontSize="14"/>
+
+                <Button Grid.Row="2" Grid.Column="0" Name="SearchButton" Style="{StaticResource CommonControlStyle}" FontSize="14" Content="Поиск" Click="SearchButton_Click"/>
+                <Button Grid.Row="2" Grid.Column="1" Name="FilterButton" Style="{StaticResource CommonControlStyle}" FontSize="14" Content="Фильтр" Click="FilterButton_Click"/>
+                <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Name="RefreshButton" Style="{StaticResource CommonControlStyle}" FontSize="14" Background="LightGoldenrodYellow" Content="Обновить" Click="RefreshButton_Click"/>
+            </Grid>
+
+            <DataGrid Grid.Row="2" Name="SalesDataGrid" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Sales}" SelectedItem="{Binding Path=SelectedSale}" Style="{StaticResource CommonDataGridStyle}" AlternatingRowBackground="LightYellow" SelectionMode="Extended" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Дата продажи" Binding="{Binding SaleDate, StringFormat=yyyy-MM-dd}"/>
+                    <DataGridTextColumn Header="Реализовал" Binding="{Binding Worker.Fullname}"/>
+                    <DataGridTextColumn Header="Отдел" Binding="{Binding Worker.Departament.DepartamentName}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <GridSplitter Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Height="2" ShowsPreview="False"/>
+
+            <DataGrid Grid.Row="4" Name="SaleProductsDataGrid" Grid.ColumnSpan="2" ItemsSource="{Binding SelectedSale.SaleProducts}" Style="{StaticResource CommonDataGridStyle}" AlternatingRowBackground="LightCyan"  IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Товар" Binding="{Binding Product.ProductName}"/>
+                    <DataGridTextColumn Header="Количество" Binding="{Binding Amount}"/>
+                    <DataGridTextColumn Header="Единица измерения" Binding="{Binding Product.Unit}"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Product.Price, StringFormat='0.00'}"/>
+                    <DataGridTextColumn Header="Сумма" Binding="{Binding Sum, StringFormat='0.00'}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button Grid.Row="5" Grid.Column="2" Name="InsertButton" Content="Добавить" Style="{StaticResource CommonControlStyle}" Background="LightGreen" Click="InsertButton_Click"/>
+            <Button Grid.Row="5" Grid.Column="0" Name="DeleteButton" Content="Удалить" Style="{StaticResource CommonControlStyle}" Background="LightPink" Click="DeleteButton_Click"/>
+            <TextBlock Name="LogTextBlock" Visibility="Hidden"/>
+        </Grid>
+    </Grid>
+</Window>

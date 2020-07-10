@@ -1,0 +1,52 @@
+﻿<Window x:Class="ToolsWorld.WPF.View.WorkerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolsWorld.WPF.View"
+        mc:Ignorable="d"
+        Title="Мир инструментов — сотрудник"
+        Height="Auto"
+        Width="Auto"
+        SizeToContent="Height"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid Background="PaleGreen">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Имя пользователя" Style="{StaticResource CommonControlStyle}" HorizontalAlignment="Right"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Пароль" Name="PasswordLabel" Style="{StaticResource CommonControlStyle}" HorizontalAlignment="Right"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="Полное имя" Style="{StaticResource CommonControlStyle}" HorizontalAlignment="Right"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Номер телефона" Style="{StaticResource CommonControlStyle}" HorizontalAlignment="Right"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="Отдел" Style="{StaticResource CommonControlStyle}" HorizontalAlignment="Right"/>
+            <Label Grid.Row="5" Grid.Column="0" Content="Уровень доступа" Style="{StaticResource CommonControlStyle}" HorizontalAlignment="Right"/>
+
+            <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Name="LogTextBox" Style="{StaticResource CommonControlStyle}"/>
+            <PasswordBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Name="PasswordBox" Style="{StaticResource CommonControlStyle}"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Name="FullnameTextBox" Style="{StaticResource CommonControlStyle}"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Name="TelTextBox" Style="{StaticResource CommonControlStyle}"/>
+            <ComboBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Name="DepartamentNamesComboBox" Style="{StaticResource CommonControlStyle}"/>
+            <ComboBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Name="LvlsComboBox" Style="{StaticResource CommonControlStyle}">
+                <ComboBoxItem Content="1"/>
+                <ComboBoxItem Content="2"/>
+                <ComboBoxItem Content="3"/>
+            </ComboBox>
+
+            <Button Grid.Row="6" Grid.Column="2" Name="EnterButton" Content="Ок" Style="{StaticResource CommonControlStyle}" Background="LightGoldenrodYellow" Click="EnterButton_Click"/>
+            <Button Grid.Row="6" Grid.Column="1" Name="CancelButton" Content="Отмена" Style="{StaticResource CommonControlStyle}" Background="LightGoldenrodYellow" Click="CancelButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>

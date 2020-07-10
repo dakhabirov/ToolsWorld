@@ -1,0 +1,88 @@
+﻿<Window x:Class="ToolsWorld.WPF.DepartamentsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolsWorld.WPF"
+        mc:Ignorable="d"
+        Title="Мир инструментов — отделы"
+        Height="Auto"
+        Width="Auto"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid Background="PaleGreen">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="0.33*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="0.33*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Height="Auto" VerticalAlignment="Top" FontSize="16">
+                <MenuItem Header="Файл">
+                    <MenuItem Name="ExitMenuItem" Header="Выход" Click="ExitMenuItem_Click"/>
+                </MenuItem>
+            </Menu>
+
+            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <ComboBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="ParamComboBox" Style="{StaticResource CommonControlStyle}" FontSize="14" ItemsSource="{Binding Sale}">
+                    <ComboBoxItem Content=""/>
+                    <ComboBoxItem Content="Наименование"/>
+                </ComboBox>
+
+                <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="ValueTextBox" Style="{StaticResource CommonControlStyle}" FontSize="14"/>
+
+                <Button Grid.Row="2" Grid.Column="0" Name="SearchButton" Style="{StaticResource CommonControlStyle}" FontSize="14" Content="Поиск" Click="SearchButton_Click"/>
+                <Button Grid.Row="2" Grid.Column="1" Name="FilterButton" Style="{StaticResource CommonControlStyle}" FontSize="14" Content="Фильтр" Click="FilterButton_Click"/>
+                <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Name="RefreshButton" Style="{StaticResource CommonControlStyle}" FontSize="14" Background="LightGoldenrodYellow" Content="Обновить" Click="RefreshButton_Click"/>
+            </Grid>
+
+            <DataGrid Grid.Row="2" Name="DepartamentsDataGrid" Grid.ColumnSpan="3" ItemsSource="{Binding Path=Departaments}" SelectedItem="{Binding SelectedDepartament}" Style="{StaticResource CommonDataGridStyle}" AlternatingRowBackground="LightYellow" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Наименование" Binding="{Binding DepartamentName}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid Grid.Row="4" Name="workersDataGrid" Grid.ColumnSpan="3" AutoGenerateColumns="False" ItemsSource="{Binding SelectedDepartament.Workers}" Style="{StaticResource CommonDataGridStyle}" AlternatingRowBackground="LightCyan" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Сотрудник" Binding="{Binding Fullname}"/>
+                    <DataGridTextColumn Header="Номер телефона" Binding="{Binding Tel}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid Grid.Row="6" Name="productsDataGrid" Grid.ColumnSpan="3" AutoGenerateColumns="False" ItemsSource="{Binding SelectedDepartament.Products}" Style="{StaticResource CommonDataGridStyle}" AlternatingRowBackground="LightCyan" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Наименование" Binding="{Binding ProductName}"/>
+                    <DataGridTextColumn Header="Количество" Binding="{Binding Amount}"/>
+                    <DataGridTextColumn Header="Единица измерения" Binding="{Binding Unit}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <GridSplitter Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Height="2" ShowsPreview="False"/>
+            <GridSplitter Grid.Row="5" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Height="2" ShowsPreview="False"/>
+
+            <Button Grid.Row="7" Grid.Column="2" Name="InsertButton" Content="Добавить" Style="{StaticResource CommonControlStyle}" Background="LightGreen" Click="InsertButton_Click"/>
+            <Button Grid.Row="7" Grid.Column="1" Name="UpdateButton" Content="Редактировать" Style="{StaticResource CommonControlStyle}" Background="LightGoldenrodYellow" Click="UpdateButton_Click"/>
+            <Button Grid.Row="7" Grid.Column="0" Name="DeleteButton" Content="Удалить" Style="{StaticResource CommonControlStyle}" Background="LightPink" Click="DeleteButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>

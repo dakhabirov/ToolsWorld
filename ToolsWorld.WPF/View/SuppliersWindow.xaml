@@ -1,0 +1,69 @@
+﻿<Window x:Class="ToolsWorld.WPF.SuppliersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolsWorld.WPF"
+        mc:Ignorable="d"
+        Title="Мир инструментов — поставщики"
+        Height="Auto"
+        Width="Auto"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid Background="PaleGreen">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Height="Auto" VerticalAlignment="Top" FontSize="16">
+                <MenuItem Header="Файл">
+                    <MenuItem Name="ExitMenuItem" Header="Выход" Click="ExitMenuItem_Click"/>
+                </MenuItem>
+            </Menu>
+
+            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <ComboBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="ParamComboBox" Style="{StaticResource CommonControlStyle}" FontSize="14" ItemsSource="{Binding Sale}">
+                    <ComboBoxItem Content=""/>
+                    <ComboBoxItem Content="Наименование"/>
+                    <ComboBoxItem Content="Номер телефона"/>
+                </ComboBox>
+
+                <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="ValueTextBox" Style="{StaticResource CommonControlStyle}" FontSize="14"/>
+
+                <Button Grid.Row="2" Grid.Column="0" Name="SearchButton" Style="{StaticResource CommonControlStyle}" FontSize="14" Content="Поиск" Click="SearchButton_Click"/>
+                <Button Grid.Row="2" Grid.Column="1" Name="FilterButton" Style="{StaticResource CommonControlStyle}" FontSize="14" Content="Фильтр" Click="FilterButton_Click"/>
+                <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Name="RefreshButton" Style="{StaticResource CommonControlStyle}" FontSize="14" Background="LightGoldenrodYellow" Content="Обновить" Click="RefreshButton_Click"/>
+            </Grid>
+
+            <DataGrid Grid.Row="2" Name="SuppliersDataGrid" Grid.ColumnSpan="3" ItemsSource="{Binding Suppliers}" Style="{StaticResource CommonDataGridStyle}" AlternatingRowBackground="LightYellow" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Наименование" Binding="{Binding SupplierName}"/>
+                    <DataGridTextColumn Header="Номер телефона" Binding="{Binding Tel}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button Grid.Row="3" Grid.Column="2" Name="InsertButton" Content="Добавить" Style="{StaticResource CommonControlStyle}" Background="LightGreen" Click="InsertButton_Click"/>
+            <Button Grid.Row="3" Grid.Column="1" Name="UpdateButton" Content="Редактировать" Style="{StaticResource CommonControlStyle}" Background="LightGoldenrodYellow" Click="UpdateButton_Click"/>
+            <Button Grid.Row="3" Grid.Column="0" Name="DeleteButton" Content="Удалить" Style="{StaticResource CommonControlStyle}" Background="LightPink" Click="DeleteButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>
