@@ -39,7 +39,7 @@
 ![alt text](https://github.com/dakhabirov/ToolsWorld/blob/master/Resourses/Screenshots/OrdersWindow.PNG "Заказы")
 
 ### Добавление заказа
-![alt text](https://github.com/dakhabirov/ToolsWorld/blob/master/Resourses/Screenshots/OrderWindow.PNG "Добавление заказа")
+![alt text](https://github.com/dakhabirov/ToolsWorld/blob/master/Resourses/Screenshots/Order_Window.PNG "Добавление заказа")
 
 ### Поставщики
 ![alt text](https://github.com/dakhabirov/ToolsWorld/blob/master/Resourses/Screenshots/SuppliersWindow.PNG "Поставщики")
