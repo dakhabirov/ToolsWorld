@@ -14,13 +14,12 @@ namespace ToolsWorld.BL.Model
             {
                 Log = "admin",
                 Fullname = "Администратор",
-                Pass = "12345",
+                Pass = "admin",
                 Lvl = 777
             };
 
             dbContext.Workers.Add(adm);
             dbContext.SaveChanges();
-            dbContext.Dispose();
         }
     }
 }

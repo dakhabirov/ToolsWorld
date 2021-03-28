@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\LocUser\source\repos\ToolsWorld\ToolsWorld.WPF\obj\Release\
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.WPF\obj\Release\
 ToolsWorld.WPF
 none
 false
 TRACE
-C:\Users\LocUser\source\repos\ToolsWorld\ToolsWorld.WPF\App.xaml
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.WPF\App.xaml
 17141027029
 
 21-2083593310
-19-678770263
+19113793582
 View\AuthorizationWindow.xaml;View\DepartamentWindow.xaml;View\OrderWindow.xaml;View\ProductWindow.xaml;View\ResultWindow.xaml;View\DepartamentsWindow.xaml;View\MainWindow.xaml;View\OrdersWindow.xaml;View\PlaceOrder.xaml;View\ProductsWindow.xaml;View\SalesWindow.xaml;View\SaleWindow.xaml;View\SupplierWindow.xaml;View\SuppliersWindow.xaml;View\WorkersWindow.xaml;View\ChangePasswordWindow.xaml;View\WorkerWindow.xaml;
 
 False

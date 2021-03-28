@@ -20,3 +20,15 @@ C:\Users\LocUser\Desktop\ToolsWorld\ToolsWorld\ToolsWorld.BL\obj\Debug\ToolsWorl
 C:\Users\LocUser\Desktop\ToolsWorld\ToolsWorld\ToolsWorld.BL\obj\Debug\ToolsWorld.BL.csproj.CopyComplete
 C:\Users\LocUser\Desktop\ToolsWorld\ToolsWorld\ToolsWorld.BL\obj\Debug\ToolsWorld.BL.dll
 C:\Users\LocUser\Desktop\ToolsWorld\ToolsWorld\ToolsWorld.BL\obj\Debug\ToolsWorld.BL.pdb
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.BL\bin\Debug\ToolsWorld.BL.dll.config
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.BL\bin\Debug\ToolsWorld.BL.dll
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.BL\bin\Debug\ToolsWorld.BL.pdb
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.BL\bin\Debug\EntityFramework.dll
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.BL\bin\Debug\EntityFramework.xml
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.BL\obj\Debug\ToolsWorld.BL.csprojAssemblyReference.cache
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.BL\obj\Debug\ToolsWorld.BL.csproj.CoreCompileInputs.cache
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.BL\obj\Debug\ToolsWorld.BL.csproj.CopyComplete
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.BL\obj\Debug\ToolsWorld.BL.dll
+C:\Projects\dotnet\WPF\ToolsWorld\ToolsWorld.BL\obj\Debug\ToolsWorld.BL.pdb

@@ -532,7 +532,7 @@ namespace ToolsWorld.BL.Model
                     product.ProductName = productNames[rndProd];    // назначаем наименование
                     product.Amount = rnd.Next(1, 100); // назначаем случайное количество товара
                     product.Unit = units[rndProd];  // назначаем единицу измерения
-                    product.Price = prices[rndProd];    // назначаем розничную цену
+                    product.Price = prices[rndProd]/100;    // назначаем розничную цену
 
                     line = null;
                     productNames.Clear();
