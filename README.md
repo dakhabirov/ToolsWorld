@@ -1,5 +1,5 @@
 # GUI приложение для магазина инструментов
-### Стек: MS SQL Server, Entity Framework, WPF
+### Стек: WPF, Entity Framework, MS SQL Server
 
 **Реализовано**    
 ✓ Авторизация    
