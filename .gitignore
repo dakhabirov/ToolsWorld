@@ -1,0 +1,11 @@
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/ToolsWorld.BL/.vs
+/ToolsWorld.WPF/.vs
+/ToolsWorld.BL/bin
+/ToolsWorld.BL/obj
+/ToolsWorld.WPF/bin
+/ToolsWorld.WPF/obj
